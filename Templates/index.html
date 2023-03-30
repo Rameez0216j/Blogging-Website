@@ -1,0 +1,48 @@
+{% extends 'main.html' %}
+{% block title %}
+<title>Home</title>
+{% endblock title %}
+{% block body %}
+<div class="d-flex justify-content-center">
+  <img class="my-3 mx-3" style="border-radius: 50px; height: 50px; width: 50px;" src="{{ url_for('static', filename='Images/Completed.jpg') }}" alt="">
+  <h1 class="text-center my-3 mx-3">Welcome to Home page</h1>
+</div>
+<!-- <p>{{current_user.user_name}}</p> -->
+
+<!-- below code is copied from flask documentation -->
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+<ul class=flashes>
+    {% for category, message in messages %}
+    <div class="alert alert-{{category}} alert-dismissible fade show my-3" role="alert">
+        <strong>Message : </strong> {{message}}.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
+
+<!-- Image displaying  using below syntax . It can also be used to add external CSS -->
+<!-- above code is copied from flask documentation -->
+
+<div class="container row">
+{% for blog in data %}
+  <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+            <h3 class="mb-2">{{blog.Title}}</h3>
+            <div class="mb-1 text-muted">Posted on : {{blog.pub_date}}</div>
+            <p class="mb-2"">{{blog.Content}}</p>
+            <!-- if content overflows create a separate page for  detailed blog and show it there -->
+            <strong class="d-inline-block mb-2 text-success mb-2">Author : {{blog.Author}}</strong>
+          <a href="/blog_detail/{{blog.blog_id}}" class="btn btn-primary nav-link" style="color: white; width: 200px; height: 30px;">Continue reading...</a>
+        </div>
+      </div>
+      <!-- <p>{{blog.blog_id}}</p> -->
+    </div>
+{% endfor %}
+</div>
+{% endblock body %}

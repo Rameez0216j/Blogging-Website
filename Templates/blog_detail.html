@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+{% block title %}
+<title>Blog Page</title>
+{% endblock title %}
+{% block body %}
+<div class="container">
+    <h1 class="text-center my-3">{{blog.Title}}</h1>
+    <hr>
+    <div class="col-md-6">
+        {{blog.Content}}
+    </div>
+    <hr>
+    <div class="row justify-content-between">
+        <div class="col-3">
+            <strong>{{blog.pub_date}}</strong>
+        </div>
+        <div class="col-2">
+            <strong>{{blog.Author}}</strong>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <li class="nav-item btn btn-secondary mx-3 my-3" style="width: 80px;">
+            <a class="nav-link" href="/edit/{{blog.blog_id}}">Edit</a>
+        </li>
+        <li class="nav-item btn btn-danger mx-3 my-3">
+            <a class="nav-link" href="/delete/{{blog.blog_id}}">Delete</a>
+        </li>
+    </div>
+</div>
+{% endblock body %}

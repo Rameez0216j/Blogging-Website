@@ -1,0 +1,12 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&family=Kaushan+Script&display=swap');
+#Master_title{
+    font-family: 'Inspiration', cursive;
+}
+.container h1{
+    text-align: center;
+    margin: 20px;
+    margin-bottom: 50px;
+    font-family: 'Kaushan Script', cursive;
+    text-shadow: 2px 2px 5px rgb(91, 89, 89);
+}

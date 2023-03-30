@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+{% block title %}
+<title>Registration</title>
+{% endblock title %}
+{% block body %}
+<h1 class="text-center my-3">Registration Page</h1>
+<form class="row g-3 my-3" method="POST" action="/register">
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Email</label>
+      <input type="email" class="form-control" id="inputEmail4" placeholder="rameez@gmail.com" name="email">
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Password</label>
+      <input type="password" class="form-control" id="inputPassword4" name="pass">
+    </div>
+    <div class="col-6">
+      <label for="inputAddress" class="form-label">First Name</label>
+      <input type="text" class="form-control" id="inputAddress" placeholder="e.g : Rameez" name="first_name">
+    </div>
+    <div class="col-6">
+      <label for="inputAddress2" class="form-label">Last Name</label>
+      <input type="text" class="form-control" id="inputAddress2" placeholder="e.g : Ahmad" name="last_name">
+    </div>
+    <div class="col-md-6">
+      <label for="inputCity" class="form-label">User ID</label>
+      <input type="text" class="form-control" id="inputCity" name="id">
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Sign in</button>
+    </div>
+  </form>
+{% endblock body %}

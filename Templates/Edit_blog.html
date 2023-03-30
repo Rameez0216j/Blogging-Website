@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+{% block title %}
+<title>Editing blog</title>
+{% endblock title %}
+{% block body %}
+<h1 class="text-center my-3">Editing Blog</h1>
+<form action="/edit/{{blog.blog_id}}" method="POST">
+    <div class="container">
+        <div class="mb-3 col-6">
+            <label for="exampleFormControlInput1" class="form-label">Title</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Title here"
+                  name="title" value="{{blog.Title}}" >
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Content</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                  placeholder="Enter description here...." name="content">{{blog.Content}}</textarea>
+        </div>
+        <div class="mb-3 col-6">
+            <label for="exampleFormControlInput1" class="form-label">Author</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Author name here"
+                  name="author" value="{{blog.Author}}">
+        </div>
+        <input type="Submit" value="POST" class="btn btn-primary">
+    </div>
+</form>
+{% endblock body %}
